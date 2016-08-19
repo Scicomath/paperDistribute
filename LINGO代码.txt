@@ -1,6 +1,6 @@
 SETS:
-PAPER/P1..P90/;
-JUDGE/J1..J14/:JNUM;
+PAPER/P1..P90/; !记得将这里的90修改为实际论文数;
+JUDGE/J1..J14/:JNUM; !记得将这里的14修改为实际评委数;
 LINK(PAPER,JUDGE):X;
 ENDSETS
 
@@ -15,6 +15,7 @@ ENDSETS
 @FOR(LINK:@BIN(X));
 
 DATA:
+!记得将MATLAB生成的每个评委阅卷数替换下面的数据;
 JNUM =
     20
     20
