@@ -1,0 +1,34 @@
+SETS:
+PAPER/P1..P90/;
+JUDGE/J1..J14/:JNUM;
+LINK(PAPER,JUDGE):X;
+ENDSETS
+
+@FOR(PAPER(I):
+	@SUM(JUDGE(J):X(I,J))=3;
+);
+
+@FOR(JUDGE(J):
+	@SUM(PAPER(I):X(I,J))=JNUM(J);
+);
+
+@FOR(LINK:@BIN(X));
+
+DATA:
+JNUM =
+    20
+    20
+    20
+    20
+    19
+    19
+    19
+    19
+    19
+    19
+    19
+    19
+    19
+    19;
+@TEXT('X.txt')= X;
+ENDDATA
